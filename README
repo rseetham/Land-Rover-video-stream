@@ -1,0 +1,43 @@
+This project aims to control a bot with a PC over an ethernet cable with help from the real-time video streaming from a camera on the bot.
+This project adds video streaming to the Land-Rover project.
+
+The bot consists of 2 dc motors for movement and a robotic arm with 4 degrees of freedom that can pick up small objects (upto 1” cube) carry it. The BBB drives the bot. A socket connection is established via an ethernet cable. The camera is connected to the BBB through the USB port. The video is streamed onto VLC Player.
+
+The client code remains the same and runs on the PC(x86). The server code runs on the BBB.
+
+
+The libraries needed for the server are downloaded as follows:
+
+sudo apt-get install libv4l-dev
+sudo apt-get install ivtv-utils
+sudo apt-get install ffmpeg
+
+libv4l-dev is for camera control; ivtv-utils and ffmpeg are for enabling the streaming.
+
+
+The libraries needed for the client are downloaded as follows:
+
+sudo apt-get install ncurses-dev
+or
+sudo apt-get install libncurses5-dev
+
+ncurses is for keyboard control.
+
+
+The IP address of the connection to the PC should be changed in streamVideoUDP with the appropriate port no for video streaming.
+The IP address of the connection to the BBB should also be changed in socet_client.cpp with the appropriate port no.
+
+The video of the bot in action:
+http://youtu.be/CWlIOM2NPCU
+
+For GPIO commands and streaming derekmolly’s code has been used:
+Molloy, D. [DerekMolloyDCU] https://github.com/derekmolloy/boneCV
+and https://github.com/derekmolloy/boneDeviceTree
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+socket_server:
+	${CC} socket_server_with_camera.cpp SimpleGPIO.cpp -pthread -o server
+capture:
+	${CC} capture.c -lv4l2 -o capture 
